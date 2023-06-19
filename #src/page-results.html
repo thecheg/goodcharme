@@ -1,0 +1,197 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': 'Результаты поиска',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app" data-search="show">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<section class="section results">
+			<div class="container results__container">
+				<div class="results__tabs ui-tabs" data-tabs="results">
+					<a class="results__tabs-item ui-tabs__item" data-tab="results1">
+						Парфюм (30)
+					</a>
+					<a class="results__tabs-item ui-tabs__item" data-tab="results2">
+						Полезные статьи
+					</a>
+				</div>
+				<div class="results__cont catalog">
+					<div class="ui-tabs-content" data-tabs="results" data-tab="results1">
+						<div class="ui-grid results__list catalog__list">
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card2.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card1.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card3.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card2.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card1.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card3.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card2.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card1.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+							<div class="ui-grid__col results__col catalog__list-item">
+								@@include('@@webRoot/template/_ui-card.html', {
+									'mod': '',
+									'img': 'card3.png',
+									'name': 'Good Charme Hanoi',
+									'vol': '80 ml',
+									'rate': 5
+								})
+							</div>
+						</div>
+					</div>
+					<div class="ui-tabs-content" data-tabs="results" data-tab="results2">
+						<div class="ui-grid results__list">
+							<div class="ui-grid__col results__col">
+								<a class="blog__item">
+									<div class="blog__item-img">
+										<img src="@@webRoot/images/blog1.jpg" alt="" loading="lazy" />
+									</div>
+									<div class="blog__item-ttl">
+										Маленькая роскошь
+									</div>
+									<div class="ui-text blog__item-text">
+										делает еще один шаг к созданию устойчивых и экологически чистых ароматов, обещая сажать одно дерево с каждым ароматом
+									</div>
+								</a>
+							</div>
+							<div class="ui-grid__col results__col">
+								<a class="blog__item">
+									<div class="blog__item-img">
+										<img src="@@webRoot/images/blog1.jpg" alt="" loading="lazy" />
+									</div>
+									<div class="blog__item-ttl">
+										Маленькая роскошь
+									</div>
+									<div class="ui-text blog__item-text">
+										делает еще один шаг к созданию устойчивых и экологически чистых ароматов, обещая сажать одно дерево с каждым ароматом
+									</div>
+								</a>
+							</div>
+							<div class="ui-grid__col results__col">
+								<a class="blog__item">
+									<div class="blog__item-img">
+										<img src="@@webRoot/images/blog1.jpg" alt="" loading="lazy" />
+									</div>
+									<div class="blog__item-ttl">
+										Маленькая роскошь
+									</div>
+									<div class="ui-text blog__item-text">
+										делает еще один шаг к созданию устойчивых и экологически чистых ароматов, обещая сажать одно дерево с каждым ароматом
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section results results--2">
+			<div class="container results__container">
+				<header class="head head--in-cont">
+					<h2 class="head__title buy__title">
+						Недавно просмотрено
+					</h2>
+				</header>
+				<div class="results__cont catalog">
+					<div class="ui-grid results__list catalog__list">
+						<div class="ui-grid__col results__col catalog__list-item">
+							@@include('@@webRoot/template/_ui-card.html', {
+								'mod': '',
+								'img': 'card2.png',
+								'name': 'Good Charme Hanoi',
+								'vol': '80 ml',
+								'rate': 5
+							})
+						</div>
+						<div class="ui-grid__col results__col catalog__list-item">
+							@@include('@@webRoot/template/_ui-card.html', {
+								'mod': '',
+								'img': 'card1.png',
+								'name': 'Good Charme Hanoi',
+								'vol': '80 ml',
+								'rate': 5
+							})
+						</div>
+						<div class="ui-grid__col results__col catalog__list-item">
+							@@include('@@webRoot/template/_ui-card.html', {
+								'mod': '',
+								'img': 'card3.png',
+								'name': 'Good Charme Hanoi',
+								'vol': '80 ml',
+								'rate': 5
+							})
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>

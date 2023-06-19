@@ -1,0 +1,148 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': 'Женская парфюмерия',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<div class="catalog-poster">
+			<picture>
+				<source srcset="@@webRoot/images/catalog-women.webp" type="image/webp">
+				<source srcset="@@webRoot/images/catalog-women.jpg" type="image/jpeg">
+				<img src="@@webRoot/images/catalog-women.jpg" alt="" loading="lazy" />
+			</picture>
+		</div>
+		<section class="section catalog">
+			<header class="head text-center catalog__head">
+				<h1 class="head__title">
+					Женская парфюмерия
+				</h1>
+				<div class="head__subtitle">
+					<div class="head__div"></div>
+					Каждый женский парфюм Good Charme раскрывает новые ароматные возможности в&nbsp;женской парфюмерии, позволяя каждой женщине создавать свой собственный ольфакторный мир.
+				</div>
+			</header>
+			<div class="container">
+				<div class="ui-grid catalog__info">
+					<div class="ui-grid catalog__info-btns">
+						<a class="ui-btn ui-btn--light catalog__info-btn" href="@@webRoot/page-catalog-men.html">
+							<span class="ui-btn__text ui-btn__text--gradient">
+								Мужская парфюмерия
+							</span>
+						</a>
+						<a class="ui-btn ui-btn--light catalog__info-btn" href="@@webRoot/page-catalog-children.html">
+							<span class="ui-btn__text ui-btn__text--gradient">
+								Детская парфюмерия
+							</span>
+						</a>
+					</div>
+					<div class="ui-grid catalog__info-quantity">
+						35 продуктов
+					</div>
+				</div>
+				<div class="catalog__list catalog__grid">
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Boss',
+							'vol': '80 ml',
+							'rate': 0
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Class',
+							'vol': '80 ml',
+							'rate': 3
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col catalog__grid-col--b">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': 'ui-card--b',
+							'img': 'card2.png',
+							'name': 'COCO',
+							'vol': '80 ml',
+							'rate': 5
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Boss',
+							'vol': '80 ml',
+							'rate': 0
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Class',
+							'vol': '80 ml',
+							'rate': 3
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col catalog__grid-col--b">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': 'ui-card--b',
+							'img': 'card2.png',
+							'name': 'Flower',
+							'vol': '80 ml',
+							'rate': 5
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Boss',
+							'vol': '80 ml',
+							'rate': 0
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Class',
+							'vol': '80 ml',
+							'rate': 3
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Boss',
+							'vol': '80 ml',
+							'rate': 0
+						})
+					</div>
+					<div class="catalog__list-item catalog__grid-col">
+						@@include('@@webRoot/template/_ui-card.html', {
+							'mod': '',
+							'img': 'card2.png',
+							'name': 'Class',
+							'vol': '80 ml',
+							'rate': 3
+						})
+					</div>
+				</div>
+			</div>
+		</section>
+@@include('@@webRoot/template/_category.html', {
+	'men': true,
+	'child': true
+})
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>

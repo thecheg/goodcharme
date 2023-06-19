@@ -1,0 +1,116 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': 'Где купить',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<section class="section buy">
+			<header class="head">
+				<h1 class="head__title buy__title">
+					Магазины, в которых вы можете купить парфюмерию GoodCharme в&nbsp;России:
+				</h1>
+			</header>
+			<div class="container">
+				<div class="ui-grid buy__row">
+					<div class="ui-grid__col buy__col">
+						<div class="buy__shop">
+							<div class="buy__shop-logo">
+								<img src="@@webRoot/images/buy1.png" alt="" />
+							</div>
+							<div class="buy__shop-name">
+								Лэтуаль
+							</div>
+							<div class="ui-text buy__shop-text">
+								Оффлайн в&nbsp;магазине или&nbsp;с&nbsp;доставкой по&nbsp;России
+							</div>
+							<div class="buy__shop-btn">
+								<a class="ui-btn ui-btn--orange-gradient">
+									<span class="ui-btn__text">
+										Купить
+									</span>
+									<span class="ui-btn__icon">
+										<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+			<script>
+				const buy = [
+				{
+					'name': `Л'ЭТУАЛЬ`,
+					'text': `<p>
+						ул. Мира, стр. 51<br />
+						ТРК "Июнь"<br />
+						141008, Мытищи, Московская область
+					</p>
+					<p>
+						<a href="tel:+78005506009" target="_blank">+78005506009</a>
+					</p>`,
+					'coords': [55.784268, 37.634371]
+				},
+				{
+					'name': `Л'ЭТУАЛЬ 2`,
+					'text': `<p>
+						Можайское ш., 39<br />
+						ТЦ "Петровский"<br />
+						143002, Одинцово, Московская область
+					</p>
+					<p>
+						<a href="tel:+78005506009" target="_blank">+78005506009</a>
+					</p>`,
+					'coords': [55.717284, 37.414041]
+				},
+				{
+					'name': `Л'ЭТУАЛЬ 3`,
+					'text': `<p>
+						ул. Правобережная, 1Б<br />
+						ТЦ "Капитолий Правобережная"<br />
+						125445, Химки, Москва
+					</p>
+					<p>
+						<a href="tel:+78005506009" target="_blank">+78005506009</a>
+					</p>`,
+					'coords': [55.881006, 37.450217]
+				},
+				{
+					'name': `Л'ЭТУАЛЬ 3`,
+					'text': `<p>
+						ул. Генерала Кузнецова, 22<br />
+						ТЦ "МИЛЯ"<br />
+						125445, Москва
+					</p>
+					<p>
+						<a href="tel:+78005506009" target="_blank">+78005506009</a>
+					</p>`,
+					'coords': [55.685919, 37.853964]
+				},
+			]
+			</script>
+			<div class="buy__block">
+				<div class="buy__inner">
+					<div class="buy__search">
+						<label class="ui-input">
+							<input type="text" placeholder="Введите адрес"/>
+							<span class="ui-input__icon">
+								<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg>
+							</span>
+						</label>
+					</div>
+					<div class="ui-grid buy__list ui-scroll"></div>
+				</div>
+				<div class="buy__map" id="buy-map"></div>
+			</div>
+		</section>
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>

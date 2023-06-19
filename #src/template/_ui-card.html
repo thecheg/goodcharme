@@ -1,0 +1,33 @@
+<a class="ui-card @@mod @@if (context.bg) {@@bg}" href="@@webRoot/page-catalog-product.html">
+	<div class="ui-card__top">
+		<div class="ui-card__img">
+			<img src="@@webRoot/images/@@img" alt="" />
+		</div>
+		<div class="ui-card__badges">
+		@@if (context.badges == true) {
+			<div class="ui-card__badges-item">новинка</div>
+		}
+		@@if (context.badges && context.badges !== true) {
+			@@badges
+		}
+		</div>
+	</div>
+	<div class="ui-card__details">
+		<div class="ui-card__name">
+			@@name
+		</div>
+		<div class="ui-card__rating">
+			<div class="ui-rating">
+				@@for (var i = 0; i < context.rate; i++) {
+					<div class="ui-rating__item active"></div>
+				}
+				@@for (var i = 0; i < 5 - context.rate; i++) {
+					<div class="ui-rating__item"></div>
+				}
+			</div>
+		</div>
+		<div class="ui-card__volume">
+			@@vol
+		</div>
+	</div>
+</a>

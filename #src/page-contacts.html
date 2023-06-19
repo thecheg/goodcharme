@@ -1,0 +1,103 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': 'Контакты',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<section class="section contacts">
+			<div class="container">
+				<div class="ui-layout">
+@@include('@@webRoot/template/_layout-side.html', {
+	'headTag': 'header',
+	'ttlTag': 'h1'
+})
+					<div class="ui-layout__main contacts__right">
+						<div class="head head--in-cont">
+							<div class="head__title">
+								Форма обратной связи
+							</div>
+							<div class="ui-text contacts__subtitle">
+								Заполните форму и&nbsp;отправьте запрос
+							</div>
+						</div>
+						<form class="contacts__form">
+							<div class="contacts__form-field">
+								<div class="ui-select">
+									<select data-placeholder="Тема сообщения">
+										<option></option>
+										<option>
+											Тема1
+										</option>
+										<option>
+											Тема2
+										</option>
+										<option>
+											Тема3
+										</option>
+										<option>
+											Тема4
+										</option>
+										<option>
+											Тема5
+										</option>
+									</select>
+								</div>
+							</div>
+							<div class="contacts__form-field">
+								<label class="ui-input">
+									<input type="text" placeholder="Имя"/>
+								</label>
+							</div>
+							<div class="contacts__form-field">
+								<label class="ui-input">
+									<input type="text" placeholder="Фамилия"/>
+								</label>
+							</div>
+							<div class="contacts__form-field">
+								<label class="ui-input">
+									<input type="email" placeholder="E-mail"/>
+								</label>
+							</div>
+							<div class="contacts__form-field">
+								<label class="ui-input">
+									<input type="tel" placeholder="Телефон"/>
+								</label>
+							</div>
+							<div class="contacts__form-field">
+								<label class="ui-input">
+									<textarea rows="1" placeholder="Ваше сообщение"></textarea>
+								</label>
+							</div>
+							<div class="contacts__form-field contacts__form-field--a ui-agree">
+								<label class="ui-check">
+									<input type="checkbox" />
+									<span class="ui-check__icon"><span class="ui-check__icon-in"></span></span>
+									<span class="ui-check__text">
+										Ваша личная информация будет использована в&nbsp;соответствии с&nbsp;<a>Политики конфеденциальности</a>.
+									</span>
+								</label>
+							</div>
+							<div class="contacts__form-field contacts__form-field--b">
+								<button class="ui-btn ui-btn--orange-gradient" type="button">
+									<span class="ui-btn__text">
+										Подтвердить
+									</span>
+									<span class="ui-btn__icon">
+										<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+									</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>

@@ -1,0 +1,382 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': 'Карточка товара',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<section class="section product">
+			<div class="product__back">
+				<div class="container">
+					<button class="ui-btn ui-btn--orange-gradient" onclick="history.back()" type="button">
+						<span class="ui-btn__icon">
+							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-left"></use></svg>
+						</span>
+						<span class="ui-btn__text">
+							назад
+						</span>
+					</button>
+				</div>
+			</div>
+			<div class="product__main">
+				<div class="container">
+					<div class="product__block">
+						<div class="product__right">
+							<div class="product__right-in product__details">
+								<div class="ui-text product__details-vol">
+									100 ml
+								</div>
+								<div class="product__details-head">
+									<h1 class="product__details-name">
+										LAVISH
+									</h1>
+								</div>
+								<div class="ui-text product__details-text">
+									<p>
+										Мужская парфюмерия
+									</p>
+									<p>
+										Стойкость аромата: от 7 до 12 часов
+									</p>
+								</div>
+								<div class="product__details-bot">
+									<div class="ui-rating ui-rating--b product__details-rating">
+										<div class="ui-rating__item active"></div>
+										<div class="ui-rating__item active"></div>
+										<div class="ui-rating__item active"></div>
+										<div class="ui-rating__item"></div>
+										<div class="ui-rating__item"></div>
+									</div>
+									<div class="product__details-revs">
+										<a class="ui-tabs-trigger" data-prod-scroll="#product-info" data-tabs="info" data-tab="info3">1 отзыв</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product__left">
+							<div class="product__imgs">
+								<div class="product__imgs-list">
+									<a class="product__imgs-item" data-fancybox="product" href="@@webRoot/images/product1.jpg">
+										<img src="@@webRoot/images/product1.jpg" alt="" loading="lazy" />
+									</a>
+									<a class="product__imgs-item" data-fancybox="product" href="@@webRoot/images/product1.jpg">
+										<img src="@@webRoot/images/product2.jpg" alt="" loading="lazy" />
+									</a>
+									<a class="product__imgs-item" data-fancybox="product" href="@@webRoot/images/product1.jpg">
+										<img src="@@webRoot/images/product1.jpg" alt="" loading="lazy" />
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="product__vdots">
+							<div class="ui-dots product__vdots-in"></div>
+						</div>
+						<div class="product__hdots">
+							<div class="ui-dots"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product__info" id="product-info">
+				<div class="product__info-top">
+					<div class="container">
+						<div class="product__info-cont">
+							<div class="product__tabs ui-tabs" data-tabs="info">
+								<a class="product__tabs-item ui-tabs__item" data-tab="info1">
+									Детали
+								</a>
+								<a class="product__tabs-item ui-tabs__item" data-tab="info2">
+									Подробнее
+								</a>
+								<a class="product__tabs-item ui-tabs__item active" data-tab="info3">
+									Отзывы • 5
+								</a>
+								<a class="product__tabs-item ui-tabs__item" data-tab="info4">
+									Способ  применения
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="product__info-cont">
+						<div class="ui-tabs-content" data-tabs="info" data-tab="info1">
+							<div class="ui-text article-text">
+								<h2>
+									Продукт
+								</h2>
+								<p>
+									Парфюм для мужчин от 18 лет и старше с аристократическим стилем, богатых людей, демонстрирующих щедрый, мудрый и элегантный стиль, подходит для начальников, бизнесменов, начальников отделов, лидеров.
+								</p>
+								<h2>
+									Состав
+								</h2>
+								<ul>
+									<li>
+										Верхние ноты: бергамот, ананас, лист черной смородины, шафран
+									</li>
+									<li>
+										Средние ноты: фиалковая роза, лилия, сандаловое дерево
+									</li>
+									<li>
+										Базовые ноты: кедр, амбра, пачули и мускус
+									</li>
+									<li>
+										Группа аромата: пряно-древесная ориента
+									</li>
+								</ul>
+								<h2>
+									Парфюмерное искусство
+								</h2>
+								<p>
+									Этот продукт, изготовленный из высококачественных ароматических ингридиентов, включаю амбру и мускус, очень немногие парфюмерные линии в мире имеют продукт, который сочетает в себе эти три ингридиента. 
+								</p>
+							</div>
+						</div>
+						<div class="ui-tabs-content" data-tabs="info" data-tab="info2">
+							<div class="ui-text article-text">
+								<h2>
+									Объем
+								</h2>
+								<p>
+									100 ml
+								</p>
+								<h2>
+									Cписок ингредиентов
+								</h2>
+								<p>
+									ALCOHOL | PARFUM (FRAGRANCE) | AQUA (WATER) | LINALOOL | LIMONENE | BENZYL SALICYLATE | CITRONELLOL | GERANIOL | HEXYL CINNAMAL | COUMARIN | CITRAL | BENZYL ALCOHOL | BUTYL METHOXYDIBENZOYLMETHANE | CI 14700 (RED 4) | CI 19140 (YELLOW 5) | CI 42090 (BLUE 1) | IL47-1
+								</p>
+								<p>
+									<div class="product__info-package">
+										На упаковке всех наших изделий приводится список ингредиентов. Всегда внимательно изучайте состав продукта перед его использованием, если у Вас есть аллергия на какие-либо вещества.
+									</div>
+								</p>
+								<p>
+									<br />
+									Происхождение: Франция-Вьетнам<br />
+									Срок годности: Не менее 12 месяцев с даты заказа
+								</p>
+							</div>
+						</div>
+						<div class="ui-tabs-content" data-tabs="info" data-tab="info3">
+							<div class="product__revs">
+								<div class="ui-text product__revs-first">
+									Благодарим Вас за отзыв. <a class="display-ib" data-popup="review">Оставьте отзыв первыми</a>.
+								</div>
+								<br /><br /><br /><br /><br /><br />
+								<div class="product__revs-list">
+									<div class="product__review">
+										<div class="product__review-right">
+											<div class="ui-rating ui-rating--b product__review-rating">
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+											</div>
+											<div class="product__review-name">
+												Анна
+											</div>
+											<div class="product__review-date">
+												14 марта 2023
+											</div>
+										</div>
+										<div class="product__review-left">
+											<div class="product__review-ttl">
+												Лучшие духи для моего мужа
+											</div>
+											<div class="product__review-text">
+												Одним словом, этот парфюм - великолепный. Он идеально подходит для мужчин, которые ищут запах, который отображает их аристократический стиль и высокий социальный статус. Он подходит для людей, которые ценят роскошь и качество в своей жизни.
+											</div>
+											<div class="product__review-more">
+												<a>Узнать больше</a>
+											</div>
+										</div>
+									</div>
+									<div class="product__review">
+										<div class="product__review-right">
+											<div class="ui-rating ui-rating--b product__review-rating">
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+												<div class="ui-rating__item active"></div>
+											</div>
+											<div class="product__review-name">
+												Анна
+											</div>
+											<div class="product__review-date">
+												14 марта 2023
+											</div>
+										</div>
+										<div class="product__review-left">
+											<div class="product__review-ttl">
+												Мне очень нравится
+											</div>
+											<div class="product__review-text">
+												Этот парфюм был создан для настоящих лидеров, которые стремятся выглядеть мудрыми и элегантными. Аромат великолепно подходит для начальников, бизнесменов и лидеров, которые ценят качество и утонченность во всем, что они делают. Этот парфюм имеет Этот парфюм был создан для настоящих лидеров, которые стремятся выглядеть мудрыми и элегантными. Аромат великолепно подходит для начальников, бизнесменов и лидеров, которые ценят качество и утонченность во всем, что они делают. Этот парфюм имеет
+											</div>
+											<div class="product__review-more">
+												<a>Узнать больше</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ui-pages product__revs-pages">
+									<a class="ui-pages__item current">
+										1
+									</a>
+									<a class="ui-pages__item">
+										2
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="ui-tabs-content" data-tabs="info" data-tab="info4">
+							<div class="ui-text article-text">
+								<h2>
+									Расположение парфюмерного спрея
+								</h2>
+								<p>
+									по мнению экспертов, идеальными местами для распыления духов являются: с внутренней стороны локтей, затылка, за ушами, запястий, под коленями. Способ распыления духов на точки пульса, излучающего тепло, чтобы помочь каждому вашему движению сделать аромат естественным. Вы также можете распылить немного на грудь, на ладонь, а затем распределить по волосам и немного за спиной, если хотите.
+								</p>
+								<h2>
+									Время применения
+								</h2>
+								<p>
+									лучше всего сразу после того, как вы только что приняли душ. Причина в том, что в это время кожа чистая и богатая влагой, что помогает молекулам аромата легко сливаться с кожей. Никогда не используйте руки, чтобы втирать духи в кожу, или распыляйте духи на запястья, а затем трите запястья друг о друга, так как молекулы аромата будут нарушены, вызывая изменение запаха. Вместо этого просто нанесите духи на кожу.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product__gallery">
+				<div class="container">
+					<div class="product__gallery-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="@@webRoot/images/product3.jpg" alt="" loading="lazy" />
+							</div>
+							<div class="swiper-slide">
+								<img src="@@webRoot/images/product3.jpg" alt="" loading="lazy" />
+							</div>
+							<div class="swiper-slide">
+								<img src="@@webRoot/images/product3.jpg" alt="" loading="lazy" />
+							</div>
+						</div>
+					</div>
+					<div class="ui-dots product__gallery-dots"></div>
+				</div>
+			</div>
+		</section>
+@@include('@@webRoot/template/_try.html')
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+<div class="popup popup--request" id="review">
+	<div class="popup__content popup__close-container review">
+		<div class="review__in">
+			<div class="head text-center">
+				<div class="head__title">
+					Ваша оценка
+				</div>
+				<div class="review__subtitle">
+					Поля, выделенные знаком&nbsp;(*) обязательны для&nbsp;заполнения.
+				</div>
+			</div>
+			<form class="review__form">
+				<div class="review__form-field review__form-rating">
+					<div class="ui-rating ui-rating--c ui-rating--b">
+						<input type="radio" value="5" id="stars5" name="stars" />
+						<label class="ui-rating__item" for="stars5"></label>
+
+						<input type="radio" value="4" id="stars4" name="stars" />
+						<label class="ui-rating__item" for="stars4"></label>
+
+						<input type="radio" value="3" id="stars3" name="stars" />
+						<label class="ui-rating__item" for="stars3"></label>
+
+						<input type="radio" value="2" id="stars2" name="stars" />
+						<label class="ui-rating__item" for="stars2"></label>
+
+						<input type="radio" value="1" id="stars1" name="stars" />
+						<label class="ui-rating__item" for="stars1"></label>
+					</div>
+				</div>
+				<div class="review__form-field">
+					<label class="ui-input">
+						<input type="text" placeholder="Введите заголовок отзыва"/>
+					</label>
+				</div>
+				<div class="review__form-field">
+					<label class="ui-input">
+						<textarea rows="1" placeholder="Введите текст отзыва"></textarea>
+					</label>
+				</div>
+				<div class="review__form-field">
+					<label class="ui-input">
+						<input type="text" placeholder="Имя пользователя"/>
+					</label>
+				</div>
+				<div class="review__form-field">
+					<label class="ui-input">
+						<input type="email" placeholder="E-mail"/>
+					</label>
+				</div>
+				<div class="review__form-field">
+					<label class="ui-input">
+						<input type="email" placeholder="Подтвердить E-mail"/>
+					</label>
+				</div>
+				<div class="review__form-field">
+					<div class="review__form-agree ui-agree">
+						<label class="ui-check">
+							<input type="checkbox" />
+							<span class="ui-check__icon"><span class="ui-check__icon-in"></span></span>
+							<span class="ui-check__text">
+								Ваша личная информация будет использована в&nbsp;соответствии с&nbsp;<a>Политики конфеденциальности</a>.
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="review__form-field review__form-btn">
+					<button class="ui-btn ui-btn--orange-gradient" type="submit">
+						<span class="ui-btn__text">
+							Отправить
+						</span>
+						<span class="ui-btn__icon">
+							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup popup--request" id="review-thx">
+	<div class="popup__content popup__close-container review">
+		<div class="review__bg">
+			<picture>
+				<source srcset="@@webRoot/images/blank.png" media="(max-width:599px)" type="image/png">
+
+				<source srcset="@@webRoot/images/review-thx.webp" type="image/webp">
+				<source srcset="@@webRoot/images/review-thx.jpg" type="image/jpeg">
+				<img src="@@webRoot/images/review-thx.jpg" alt="" loading="lazy" />
+			</picture>
+		</div>
+		<div class="review__in review__thx">
+			<div class="head head--no-m text-center">
+				<div class="head__title">
+					Спасибо за&nbsp;ваш отзыв!
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>

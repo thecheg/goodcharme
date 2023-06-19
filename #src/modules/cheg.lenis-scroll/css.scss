@@ -1,0 +1,27 @@
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis {
+	&-smooth {
+		scroll-behavior: auto;
+
+		& [data-lenis-prevent] {
+			overscroll-behavior: contain;
+		}
+	}
+
+	&-stopped {
+		overflow: hidden;
+	}
+
+	&-scrolling {
+		& iframe {
+			pointer-events: none;
+		}
+	}
+}

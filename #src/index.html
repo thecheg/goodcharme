@@ -1,0 +1,223 @@
+@@include('@@webRoot/template/_head.html',{
+	'pageTitle': '',
+	'pageKeywords': '',
+	'pageDescription': ''
+})
+</head>
+<body class="app">
+@@include('@@webRoot/template/_header.html')
+	<main class="app__content">
+		<section class="section intro">
+			<div class="intro__main">
+				<div class="ui-dots intro__dots"></div>
+				<div class="intro__slider">
+					<div class="swiper-wrapper">
+						<a class="swiper-slide intro__item" href="@@webRoot/page-about.html">
+							<div class="intro__item-bg" data-swiper-parallax-x="20%">
+								<picture>
+									<source srcset="@@webRoot/images/intro1_1.webp" media="(max-width:767px)" type="image/webp">
+									<source srcset="@@webRoot/images/intro1_1.jpg" media="(max-width:767px)" type="image/jpeg">
+
+									<source srcset="@@webRoot/images/intro1.webp" type="image/webp">
+									<source srcset="@@webRoot/images/intro1.jpg" type="image/jpeg">
+									<img src="@@webRoot/images/intro1.jpg" alt="" loading="lazy" />
+								</picture>
+							</div>
+							<div class="container">
+								<div class="intro__item-content">
+									<div class="intro__item-ttl">
+										CHARME Perfume, разработан с&nbsp;использованием французских технологий во&nbsp;Франции 
+									</div>
+									<div class="intro__item-btn">
+										<div class="ui-btn ui-btn--orange-gradient">
+											<span class="ui-btn__text">
+												о компании
+											</span>
+											<span class="ui-btn__icon">
+												<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a class="swiper-slide intro__item" style="--intro-color:#424242;" href="@@webRoot/page-buy.html">
+							<div class="intro__item-bg" data-swiper-parallax-x="20%">
+								<picture>
+									<source srcset="@@webRoot/images/intro1_1.webp" media="(max-width:767px)" type="image/webp">
+									<source srcset="@@webRoot/images/intro1_1.jpg" media="(max-width:767px)" type="image/jpeg">
+
+									<source srcset="@@webRoot/images/intro2.webp" type="image/webp">
+									<source srcset="@@webRoot/images/intro2.jpg" type="image/jpeg">
+									<img src="@@webRoot/images/intro2.jpg" alt="" loading="lazy" />
+								</picture>
+							</div>
+							<div class="container">
+								<div class="intro__item-content">
+									<div class="intro__item-ttl">
+										Предоставление качественных продуктов покупателям является приоритетом для&nbsp;нас
+									</div>
+									<div class="intro__item-btn">
+										<div class="ui-btn ui-btn--orange-gradient">
+											<span class="ui-btn__text">
+												где купить
+											</span>
+											<span class="ui-btn__icon">
+												<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a class="swiper-slide intro__item" href="@@webRoot/page-contacts.html">
+							<div class="intro__item-bg" data-swiper-parallax-x="20%">
+								<picture>
+									<source srcset="@@webRoot/images/intro1_1.webp" media="(max-width:767px)" type="image/webp">
+									<source srcset="@@webRoot/images/intro1_1.jpg" media="(max-width:767px)" type="image/jpeg">
+
+									<source srcset="@@webRoot/images/intro3.webp" type="image/webp">
+									<source srcset="@@webRoot/images/intro3.jpg" type="image/jpeg">
+									<img src="@@webRoot/images/intro3.jpg" alt="" loading="lazy" />
+								</picture>
+							</div>
+							<div class="container">
+								<div class="intro__item-content">
+									<div class="intro__item-ttl">
+										Подписывайтесь на&nbsp;советы и&nbsp;рекомендации от&nbsp;GOOD CHARME
+									</div>
+									<div class="intro__item-btn">
+										<div class="ui-btn ui-btn--orange-gradient">
+											<span class="ui-btn__text">
+												подробнее
+											</span>
+											<span class="ui-btn__icon">
+												<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="intro__bot">
+				<div class="container">
+					<div class="ui-text intro__bot-text">
+						Обращаем внимание, что наличие продукции зависит от&nbsp;конкретного магазина. Актуальную информацию о&nbsp;наличии товара можно уточнить у&nbsp;наших парнеров
+					</div>
+				</div>
+			</div>
+		</section>
+@@include('@@webRoot/template/_try.html')
+@@include('@@webRoot/template/_category.html', {
+	'men': true,
+	'women': true,
+	'child': true
+})
+		<section class="section entries">
+			<header class="head">
+				<div class="head__row">
+					<h2 class="head__title">
+						Полезные советы и&nbsp;рекомендации
+					</h2>
+					<div class="head__right">
+						<a class="ui-btn ui-btn--orange-gradient" href="@@webRoot/page-blog.html">
+							<span class="ui-btn__text">
+								Смотреть все
+							</span>
+							<span class="ui-btn__icon">
+								<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-btn-arrow-right"></use></svg>
+							</span>
+						</a>
+					</div>
+				</div>
+			</header>
+			<div class="container">
+				<div class="ui-grid entres__list">
+					<div class="ui-grid__col entries__col">
+						<a class="entries__item">
+							<div class="entries__item-date">
+								8 марта 2023
+							</div>
+							<div class="entries__item-in">
+								<div class="entries__item-l">
+									<div class="entries__item-img">
+										<img src="@@webRoot/images/entries1.jpg" alt="" loading="lazy" />
+									</div>
+								</div>
+								<div class="entries__item-r">
+									<div class="entries__item-ttl">
+										Идеальный подарок на день святого Валентина
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="ui-grid__col entries__col">
+						<a class="entries__item">
+							<div class="entries__item-date">
+								8 марта 2023
+							</div>
+							<div class="entries__item-in">
+								<div class="entries__item-l">
+									<div class="entries__item-img">
+										<img src="@@webRoot/images/entries1.jpg" alt="" loading="lazy" />
+									</div>
+								</div>
+								<div class="entries__item-r">
+									<div class="entries__item-ttl">
+										Идеальный подарок на день святого Валентина
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="ui-grid__col entries__col">
+						<a class="entries__item">
+							<div class="entries__item-date">
+								8 марта 2023
+							</div>
+							<div class="entries__item-in">
+								<div class="entries__item-l">
+									<div class="entries__item-img">
+										<img src="@@webRoot/images/entries1.jpg" alt="" loading="lazy" />
+									</div>
+								</div>
+								<div class="entries__item-r">
+									<div class="entries__item-ttl">
+										Идеальный подарок на день святого Валентина
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="ui-grid__col entries__col">
+						<a class="entries__item">
+							<div class="entries__item-date">
+								8 марта 2023
+							</div>
+							<div class="entries__item-in">
+								<div class="entries__item-l">
+									<div class="entries__item-img">
+										<img src="@@webRoot/images/entries1.jpg" alt="" loading="lazy" />
+									</div>
+								</div>
+								<div class="entries__item-r">
+									<div class="entries__item-ttl">
+										Идеальный подарок на день святого Валентина
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+@@include('@@webRoot/template/_footer.html')
+@@include('@@webRoot/template/_popups.html')
+@@include('@@webRoot/template/_foot.html')
+</body>
+</html>
