@@ -24377,17 +24377,38 @@ const app = {
 			block.data('productInit', true);
 		},
 		main(block) {
-			block.find('.product__imgs-item').each(function(i) {
+			let imgs = block.find('.product__imgs-item');
+			imgs.each(function(i) {
 				$(this).attr('id', 'img' + i);
 				block.find('.product__vdots-in').append(`
 					<button class="ui-dots__item" data-prod-scroll="#img${i}"></button>
 				`);
 			});
-			block.find('[data-prod-scroll]').on('click', function() {
+			let vDots = block.find('[data-prod-scroll]'),
+				vDotsScr = false;
+			vDots.on('click', function() {
+				vDotsScr = true;
 				let off = block.find('.product__back').outerHeight();
+				vDots.removeClass('active');
+				$(this).addClass('active');
 				app.scrollTo($(this).attr('data-prod-scroll'), {
 					offset: app.settings.scrollOffset() + off - 2
 				});
+				setTimeout(function() {
+					vDotsScr = false;
+				}, 1100);
+			});
+			$(window).on('scroll', function() {
+				if (app.matches('min-width:600px') && !vDotsScr) {
+					imgs.each(function() {
+						let img = $(this),
+							pos = img.offset().top;
+						if (($(window).scrollTop() + $(window).height() * .5) > pos) {
+							vDots.removeClass('active');
+							block.find(`[data-prod-scroll="#${img.attr('id')}"`).addClass('active');
+						}
+					});
+				}
 			});
 			let slider = block.find('.product__imgs'),
 				sliderS,
