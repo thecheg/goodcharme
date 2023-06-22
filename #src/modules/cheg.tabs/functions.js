@@ -28,11 +28,16 @@ app.tabs = {
 
 			active = tabId;
 
-			item.get(0).scrollIntoView({
+			// item.get(0).scrollIntoView({
+			// 	behavior: 'smooth',
+			// 	block: 'nearest',
+			// });
+
+			scrollIntoView(item.get(0), {
+				inline: 'center',
 				behavior: 'smooth',
-				block: 'nearest',
-				inline: 'center'
-			});
+				boundary: tabs.get(0),
+			})
 		});
 
 		tabs.find(itemSel+'.active').trigger('click');

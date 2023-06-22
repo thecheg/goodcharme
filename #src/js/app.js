@@ -7,6 +7,8 @@
 
 //=include ../../node_modules/jquery-form-styler/dist/jquery.formstyler.js
 
+//=include ../modules/scroll-into-view-if-needed/functions.js
+
 //=include ../modules/fancybox/fancybox.js
 
 /*
