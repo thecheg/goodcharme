@@ -24642,6 +24642,75 @@ const app = {
 		});
 		block.data('buyInit', true);
 	},
+	lang: {
+		yatranslate: {
+			/* Original language */
+			lang: 'ru',
+			/* The language we translate into on the first visit */
+			/* Язык, на который переводим при первом посещении */
+			// langFirstVisit: 'ru',
+		},
+		init() {
+			let _this = this;
+			if (_this.yatranslate.langFirstVisit && !localStorage.getItem('yt-widget')) {
+				/* Если установлен язык перевода для первого посещения и в localStorage нет yt-widget */
+				/* If the translation language is installed for the first visit and in localStorage no yt-widget */
+				_this.setLang(_this.yatranslate.langFirstVisit);
+			}
+			// Подключаем виджет yandex translate
+			// Connecting the yandex translate widget
+			let script = document.createElement('script');
+			script.src = `https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=${_this.yatranslate.lang}&widgetTheme=light&autoMode=false`;
+			document.getElementsByTagName('head')[0].appendChild(script);
+			// Получаем и записываем язык на который переводим
+			// We get and write down the language into which we translate
+			let code = _this.getCode();
+			// Показываем текущий язык в меню
+			// Show the current language in the menu
+			_this.htmlHandler(code);
+			// Вешаем событие клик на флаги
+			// We hang the event click on the flags
+			_this.eventHandler('click', 'a[data-lang]', function(el) {
+				_this.setLang(el.getAttribute('data-lang'));
+				// Перезагружаем страницу
+				// Reloading the page
+				window.location.reload();
+			});
+			$('.header__lang-trigger').on('click', function() {
+				$(this).closest('.header__lang').toggleClass('active');
+			});
+		},
+		setLang(lang) {
+			// Записываем выбранный язык в localStorage объект yt-widget 
+			// Writing the selected language to localStorage 
+			localStorage.setItem('yt-widget', JSON.stringify({
+				"lang": lang,
+				"active": true
+			}));
+		},
+		getCode() {
+			// Возвращаем язык на который переводим
+			// Returning the language to which we are translating
+			return (localStorage["yt-widget"] != undefined && JSON.parse(localStorage["yt-widget"]).lang != undefined) ? JSON.parse(localStorage["yt-widget"]).lang : yatranslate.lang;
+		},
+		htmlHandler(code) {
+			// Получаем язык на который переводим и производим необходимые манипуляции с DOM
+			// We get the language to which we translate and produce the necessary manipulations with DOM 
+			$('.header__lang-trigger .header__lang-item').html(`<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-lang-${code}"></use></svg>${code}`);
+			$(`.header__lang-item[data-lang="${code}"]`).addClass('active');
+			$(document).on('click', (e) => {
+				if (!$(e.target).closest('.header__lang').length) {
+					$('.header__lang').removeClass('active');
+				}
+			});
+		},
+		eventHandler(event, selector, handler) {
+			document.addEventListener(event, function(e) {
+				let el = e.target.closest(selector);
+				if (el) handler(el);
+			});
+		}
+	}
 };
 /*
 	
@@ -25191,6 +25260,7 @@ $.fancybox.defaults.afterClose = () => {
 	app.settings.scrollPos = $(window).scrollTop();
 	// * Init
 	app.init();
+	app.lang.init();
 	//app.popups.open('review-thx');
 	// * Menu binds
 	app.menu.bind();

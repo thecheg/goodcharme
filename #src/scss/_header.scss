@@ -9,6 +9,7 @@
 		align-items:center;
 		justify-content:space-between;
 		height:var(--header-height);
+		gap:20px;
 	}
 
 	&__logo {
@@ -29,6 +30,103 @@
 		html.no-touch &:hover {
 			& svg {
 				fill:#E29B4E;
+			}
+		}
+	}
+
+	&__lang {
+		position:relative;
+		margin-left:auto;
+
+		&-trigger {
+			display:flex;
+			align-items:center;
+			gap:4px;
+			cursor: pointer;
+
+			&:after {
+				content:'';
+				width:16px;
+				aspect-ratio: 1;
+				mask:url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m13 6-5 5-5-5' stroke='%23424242' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 100% auto;
+				background:#424242;
+				transition:all .2s;
+			}
+
+			html.no-touch &:hover {
+				color:#E29B4E;
+
+				&:after {
+					background:#E29B4E;
+				}
+			}
+		}
+
+		&-list {
+			position:absolute;
+			left:0;
+			top:calc(100% + 12px);
+			background:#fff;
+			border-radius:4px;
+			box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.10);
+			z-index:2;
+			padding:4px 0;
+			transition:opacity .2s;
+		}
+
+		&-item {
+			display:flex;
+			align-items:center;
+			gap:8px;
+			font-size:20px;
+			line-height:1.4em;
+			padding:6px 16px;
+			text-transform: uppercase;
+			min-width:90px;
+
+			&:after {
+				content:attr(data-lang);
+			}
+
+			& svg {
+				width:22px;
+				height:16px;
+				flex-shrink: 0;
+			}
+
+			&.active,
+			html.no-touch &:is(a):hover {
+				color:#E29B4E;
+			}
+
+			&.current {
+				min-width:auto!important;
+				padding:0!important;
+				transition:color .2s;
+				gap:4px;
+
+				&:after {
+					content:none;
+				}
+			}
+
+			&:is(a) {
+				
+			}
+		}
+
+		&:not(.active) & {
+			&-list {
+				opacity:0;
+				pointer-events: none;
+			}
+		}
+
+		&.active & {
+			&-trigger {
+				&:after {
+					transform:scaleY(-1);
+				}
 			}
 		}
 	}

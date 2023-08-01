@@ -536,6 +536,35 @@
 			}
 		}
 	}
+	
+	.header {
+		&__right,
+		&__block {
+			gap:10px;
+		}
+
+		&__lang {
+			margin-right:auto;
+			margin-left:unset;
+			
+			&-trigger {
+				&:after {
+					width:10px;
+				}
+			}
+
+			&-item {
+				font-size:16px;
+				padding:4px 10px;
+				min-width:auto;
+
+				& svg {
+					width:18px;
+					height:13px;
+				}
+			}
+		}
+	}
 
 	.head {
 		&__subtitle {
