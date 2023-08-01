@@ -24689,9 +24689,10 @@ const app = {
 			}));
 		},
 		getCode() {
+			let _this = this;
 			// Возвращаем язык на который переводим
 			// Returning the language to which we are translating
-			return (localStorage["yt-widget"] != undefined && JSON.parse(localStorage["yt-widget"]).lang != undefined) ? JSON.parse(localStorage["yt-widget"]).lang : yatranslate.lang;
+			return (localStorage["yt-widget"] != undefined && JSON.parse(localStorage["yt-widget"]).lang != undefined) ? JSON.parse(localStorage["yt-widget"]).lang : _this.yatranslate.lang;
 		},
 		htmlHandler(code) {
 			// Получаем язык на который переводим и производим необходимые манипуляции с DOM
