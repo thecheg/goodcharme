@@ -2520,6 +2520,7 @@ html.no-touch .ui-crossbtn:hover {
 	overflow-y: auto;
 	min-height: 100vh;
 	min-height: calc(100 * var(--vh));
+	top: 0 !important;
 	background: #fff;
 	color: #424242;
 	font-family: "Euclid Circular A";
@@ -3146,25 +3147,22 @@ html.no-touch .header__lang-trigger:hover:after {
 	-webkit-transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	transition: opacity 0.2s;
+	overflow: hidden;
+	overflow-y: auto;
+	max-height: 300px;
+}
+
+.header__lang-list::-webkit-scrollbar {
+	width: 5px;
 }
 
 .header__lang-item {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 8px;
-	font-size: 20px;
-	line-height: 1.4em;
+	display: block;
+	font-size: 16px;
+	line-height: 1.5em;
 	padding: 6px 16px;
-	text-transform: uppercase;
 	min-width: 90px;
-}
-
-.header__lang-item:after {
-	content: attr(data-lang);
+	white-space: nowrap;
 }
 
 .header__lang-item svg {
@@ -3185,11 +3183,7 @@ html.no-touch .header__lang-item:is(a):hover {
 	-webkit-transition: color 0.2s;
 	-o-transition: color 0.2s;
 	transition: color 0.2s;
-	gap: 4px;
-}
-
-.header__lang-item.current:after {
-	content: none;
+	font-weight: 500;
 }
 
 .header__lang:not(.active) .header__lang-list {
@@ -3444,6 +3438,17 @@ html.no-touch .ui-toggle:hover .ui-toggle__line {
 
 html.no-touch .ui-toggle:hover .ui-toggle__text {
 	color: #E29B4E;
+}
+
+.skiptranslate {
+	display: none !important;
+	position: absolute;
+	left: -99999px;
+	top: -99999px;
+	width: 0;
+	height: 0;
+	overflow: hidden !important;
+	visibility: hidden !important;
 }
 
 /* header - end */

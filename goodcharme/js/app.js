@@ -24234,6 +24234,61 @@
 		}
 	});
 })(document, jQuery);
+/*! jquery.cookie v1.4.1 | MIT */
+! function(a) {
+	"function" == typeof define && define.amd ? define(["jquery"], a) : "object" == typeof exports ? a(require("jquery")) : a(jQuery)
+}(function(a) {
+	function b(a) {
+		return h.raw ? a : encodeURIComponent(a)
+	}
+
+	function c(a) {
+		return h.raw ? a : decodeURIComponent(a)
+	}
+
+	function d(a) {
+		return b(h.json ? JSON.stringify(a) : String(a))
+	}
+
+	function e(a) {
+		0 === a.indexOf('"') && (a = a.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\"));
+		try {
+			return a = decodeURIComponent(a.replace(g, " ")), h.json ? JSON.parse(a) : a
+		} catch (b) {}
+	}
+
+	function f(b, c) {
+		var d = h.raw ? b : e(b);
+		return a.isFunction(c) ? c(d) : d
+	}
+	var g = /\+/g,
+		h = a.cookie = function(e, g, i) {
+			if (void 0 !== g && !a.isFunction(g)) {
+				if (i = a.extend({}, h.defaults, i), "number" == typeof i.expires) {
+					var j = i.expires,
+						k = i.expires = new Date;
+					k.setTime(+k + 864e5 * j)
+				}
+				return document.cookie = [b(e), "=", d(g), i.expires ? "; expires=" + i.expires.toUTCString() : "", i.path ? "; path=" + i.path : "", i.domain ? "; domain=" + i.domain : "", i.secure ? "; secure" : ""].join("")
+			}
+			for (var l = e ? void 0 : {}, m = document.cookie ? document.cookie.split("; ") : [], n = 0, o = m.length; o > n; n++) {
+				var p = m[n].split("="),
+					q = c(p.shift()),
+					r = p.join("=");
+				if (e && e === q) {
+					l = f(r, g);
+					break
+				}
+				e || void 0 === (r = f(r)) || (l[q] = r)
+			}
+			return l
+		};
+	h.defaults = {}, a.removeCookie = function(b, c) {
+		return void 0 === a.cookie(b) ? !1 : (a.cookie(b, "", a.extend({}, c, {
+			expires: -1
+		})), !a.cookie(b))
+	}
+});
 /*
  * Cheg UI 3.0.0
  */
@@ -24679,6 +24734,11 @@ const app = {
 			$('.header__lang-trigger').on('click', function() {
 				$(this).closest('.header__lang').toggleClass('active');
 			});
+			$(document).on('click', (e) => {
+				if (!$(e.target).closest('.header__lang').length) {
+					$('.header__lang').removeClass('active');
+				}
+			});
 		},
 		setLang(lang) {
 			// Записываем выбранный язык в localStorage объект yt-widget 
@@ -24697,19 +24757,116 @@ const app = {
 		htmlHandler(code) {
 			// Получаем язык на который переводим и производим необходимые манипуляции с DOM
 			// We get the language to which we translate and produce the necessary manipulations with DOM 
-			$('.header__lang-trigger .header__lang-item').html(`<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-lang-${code}"></use></svg>${code}`);
-			$(`.header__lang-item[data-lang="${code}"]`).addClass('active');
-			$(document).on('click', (e) => {
-				if (!$(e.target).closest('.header__lang').length) {
-					$('.header__lang').removeClass('active');
-				}
-			});
+			let el = $(`.header__lang-item[data-lang="${code}"]`);
+			$('.header__lang-trigger .header__lang-item').html(el.text());
+			el.addClass('active');
 		},
 		eventHandler(event, selector, handler) {
 			document.addEventListener(event, function(e) {
 				let el = e.target.closest(selector);
 				if (el) handler(el);
 			});
+		},
+		googleTranslateConfig: {
+			/* Original language */
+			lang: "ru",
+			/* The language we translate into on the first visit*/
+			/* Язык, на который переводим при первом посещении */
+			/* langFirstVisit: 'en', */
+			/* Если скрипт не работает или работает неправильно, раскомментируйте и укажите основной домен в свойстве domain */
+			/* If the script does not work or does not work correctly, uncomment and specify the main domain in the domain property */
+			/* domain: "Get-Web.Site" */
+		},
+		TranslateWidgetIsLoaded() {
+			let _this = this;
+			_this.TranslateInit(_this.googleTranslateConfig)
+		},
+		googleTranslateLoad() {
+			// let _this = this;
+			// /* Подключаем виджет google translate */
+			// /* Connecting the google translate widget */
+			// let script = document.createElement('script');
+			// script.src = `//translate.google.com/translate_a/element.js?cb=app.lang.TranslateInit(app.lang.googleTranslateConfig)`;
+			// document.getElementsByTagName('head')[0].appendChild(script);
+			// script.onload = () => {
+			// 	console.log('loaded');
+			// 	_this.TranslateInit(_this.googleTranslateConfig);
+			// }
+		},
+		TranslateInit(config) {
+			let _this = this;
+			if (config.langFirstVisit && !$.cookie("googtrans")) {
+				/* Если установлен язык перевода для первого посещения и куки не назначены */
+				/* If the translation language is installed for the first visit and cookies are not assigned */
+				_this.TranslateCookieHandler('/auto/' + config.langFirstVisit);
+			}
+			let code = _this.TranslateGetCode(config);
+			_this.TranslateHtmlHandler(code);
+			if (code == config.lang) {
+				/* Если язык по умолчанию, совпадает с языком на который переводим, то очищаем куки */
+				/* If the default language is the same as the language we are translating into, then we clear the cookies */
+				_this.TranslateCookieHandler(null, config.domain);
+			}
+			/* Инициализируем виджет с языком по умолчанию */
+			/* Initialize the widget with the default language */
+			new google.translate.TranslateElement({
+				pageLanguage: config.lang,
+				multilanguagePage: true, // Your page contains content in more than one languages
+			}, 'google_translate_element');
+			/* Вешаем событие  клик на флаги */
+			/* Assigning a handler to the flags */
+			$('[data-lang]').on('click', function() {
+				_this.TranslateCookieHandler(
+					'/auto/' + $(this).attr('data-lang'),
+					config.domain
+				);
+				/* Перезагружаем страницу */
+				/* Reloading the page */
+				window.location.reload();
+			});
+			$('.header__lang-trigger').on('click', function() {
+				$(this).closest('.header__lang').toggleClass('active');
+			});
+		},
+		TranslateGetCode(config) {
+			let _this = this;
+			/* Если куки нет, то передаем дефолтный язык */
+			/* If there are no cookies, then we pass the default language */
+			let lang =
+				$.cookie("googtrans") != undefined && $.cookie("googtrans") != "null" ?
+				$.cookie("googtrans") :
+				config.lang;
+			return lang.match(/(?!^\/)[^\/]*$/gm)[0];
+		},
+		TranslateCookieHandler(val, domain) {
+			let _this = this;
+			/* Записываем куки /язык_который_переводим/язык_на_который_переводим */
+			/* Writing down cookies /language_for_translation/the_language_we_are_translating_into */
+			$.cookie('googtrans', val, {
+				domain: document.domain,
+				path: '/'
+			});
+			$.cookie('googtrans', val, {
+				domain: "." + document.domain,
+				path: '/'
+			});
+			if (domain == 'undefined') return;
+			/* записываем куки для домена, если он назначен в конфиге */
+			/* Writing down cookies for the domain, if it is assigned in the config */
+			$.cookie('googtrans', val, {
+				domain: domain,
+				path: '/'
+			});
+			$.cookie('googtrans', val, {
+				domain: "." + domain,
+				path: '/'
+			});
+		},
+		TranslateHtmlHandler(code) {
+			let _this = this;
+			/* Получаем язык на который переводим и производим необходимые манипуляции с DOM */
+			/* We get the language to which we translate and produce the necessary manipulations with DOM */
+			$('[data-lang="' + code + '"]').addClass('active');
 		}
 	}
 };
@@ -25262,6 +25419,7 @@ $.fancybox.defaults.afterClose = () => {
 	// * Init
 	app.init();
 	app.lang.init();
+	// app.lang.googleTranslateLoad();
 	//app.popups.open('review-thx');
 	// * Menu binds
 	app.menu.bind();
