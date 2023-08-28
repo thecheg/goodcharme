@@ -131,10 +131,6 @@
 			min-width:90px;
 			white-space: nowrap;
 
-			&:after {
-				//content:attr(data-lang);
-			}
-
 			& svg {
 				width:22px;
 				height:16px;
@@ -151,10 +147,6 @@
 				padding:0!important;
 				transition:color .2s;
 				font-weight:500;
-			}
-
-			&:is(a) {
-				
 			}
 		}
 

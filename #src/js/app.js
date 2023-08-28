@@ -513,7 +513,8 @@ const app = {
 			lang: 'ru',
 			/* The language we translate into on the first visit */
 			/* Язык, на который переводим при первом посещении */
-			// langFirstVisit: 'ru',
+			//langFirstVisit: 'ru',
+			langFirstVisit: window.navigator.language.substring(0,2)
 		},
 		init() {
 			let _this = this;
